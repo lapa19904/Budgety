@@ -35,7 +35,7 @@ var budgetController = (function(){
     return {
         addItem: function(type, des, val){
             var newItem, ID;
-            // Create new Id
+            // Create new ID
             if(data.allItems[type].length > 0){
             ID = data.allItems[type][data.allItems[type]. length - 1].id ++;
             } else {
@@ -59,7 +59,7 @@ var budgetController = (function(){
             // calculate total income and expenses
             calculateTotal('exp');
             calculateTotal('inc');
-            // calculate the budget: income - expenses
+            // calculate the budget income - expenses
             data.budget = data.totals.inc - data.totals.exp;
             // calculate the percentage of income that we spend
             if(data.totals.inc > 0){
@@ -106,7 +106,7 @@ var UIController = (function(){
    return{
        getInput: function(){
            return {
-                type: document.querySelector(DOMStrings.inputType).value, //Will be inc or exp
+                type: document.querySelector(DOMStrings.inputType).value, // Will be inc or exp
                 description: document.querySelector(DOMStrings.inputDescription).value,
                 value: parseFloat(document.querySelector(DOMStrings.inputValue).value)
            };         
